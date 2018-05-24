@@ -1,8 +1,11 @@
-const path = require("path")
+const path = require("path");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: ["./src/main.js"]
+    main: ["./src/index.js"]
   },
   mode: "development",
   output: {
@@ -14,6 +17,13 @@ module.exports = {
     contentBase: "dist",
     overlay: true
   },
+  plugins: [
+    new MiniCssExtractPlugin(
+      {
+        filename: "css/[name].css"
+      }
+    )
+  ],
   module: {
     rules: [
       {
@@ -26,8 +36,13 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+        test: /\.s?[ac]ss$/,
+        use: [
+          "style-loader", MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.html$/,
@@ -62,4 +77,4 @@ module.exports = {
       }
     ]
   }
-}
+};
