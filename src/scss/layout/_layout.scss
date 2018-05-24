@@ -1,9 +1,11 @@
+$default-color: blue;
+
 body {
     margin: 0;
     background-color: #444;
   }
 
-  .profile {
+.profile {
     display: flex;
     -ms-align-items: center;
     align-items: center;
@@ -11,7 +13,7 @@ body {
     height: 100vh;
     flex-flow: column;
   }
-
+  
   img {
     border-radius: 100%;
     width: 300px;
@@ -24,4 +26,3 @@ body {
     color: white;
     text-shadow: 0 0 20px black;
   }
-  
