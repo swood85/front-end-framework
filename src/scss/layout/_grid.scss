@@ -1,0 +1,94 @@
+
+
+// FLOAT GRID
+#grid > div {
+    float: left;
+    height: 2.5rem;
+    border: solid $color-green-2;
+}
+
+$max: 16;
+
+@for $i from 1 through $max {
+    $equ: 100% / $i;
+    #grid.cell-#{$i} > div {
+        width: $equ;
+    }
+}
+
+
+$map: ( 850:12, 450:6, 380:3 );
+
+@each $key, $val in $map {
+
+    @media all and (max-width: $key + px) {
+        
+        @for $i from 1 through $val {
+            $equ: 100% / $i;
+            #grid.cell-#{$key}-#{$i} > div {
+                width: $equ;
+            }
+        }
+
+    }
+}
+
+
+
+// FLEXBOX GRID
+// $column: 12;
+
+// @for $i from 1 through $column {
+//     .col-#{$i} {
+//         flex: 0 0 100% / $column * $i;
+//     }
+//     .col-offset-#{$i} {
+//         margin-left: 100% / $column * $i;
+//     }
+// }
+
+$column: 12;
+$desktop: 1200;
+$tablet: 768;
+$mobile: 320;
+
+$map2: ( $mobile:$column, $tablet:$column, $desktop:$column );
+
+@each $key, $val in $map2 {
+
+    @media all and (min-width: $key + px) {
+
+        @for $i from 1 through $val {
+            .col-#{$key}-#{$i} {
+                flex: 0 0 100% / $val * $i;
+            }
+            // .col-offset-#{$i} {
+            //     margin-left: 100% / $column * $i;
+            // }
+        }
+
+    }
+
+}
+
+.container {
+    width: calc(100% - 40rem);
+	max-width: 80vw;
+    margin: 0 auto;
+    background: lightblue;
+
+    clear: both;
+
+    div[class^="col-"] {
+        background: pink;
+        border: 1px solid red;
+        padding: 1rem 0;
+        text-align: center;
+    }
+ 
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+}
