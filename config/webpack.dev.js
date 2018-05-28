@@ -1,7 +1,7 @@
 const path = require("path");
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
@@ -38,10 +38,15 @@ module.exports = {
       {
         test: /\.s?[ac]ss$/,
         use: [
-          "style-loader", MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
+          // // devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          // "style-loader", MiniCssExtractPlugin.loader,
+          // "css-loader",
+          // "postcss-loader",
+          // "sass-loader"
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { url: false, sourceMap: true } },
+          { loader: 'postcss-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } }
         ]
       },
       {
@@ -76,5 +81,7 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  devtool: 'source-map',
+  mode: devMode ? 'development' : 'production'
 };

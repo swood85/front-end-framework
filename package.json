@@ -16,7 +16,7 @@
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
-    "npm": "^6.0.1",
+    "npm": "^6.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",
@@ -44,5 +44,6 @@
   "bugs": {
     "url": "https://github.com/swood85/front-end-framework/issues"
   },
-  "homepage": "https://github.com/swood85/front-end-framework#readme"
+  "homepage": "https://github.com/swood85/front-end-framework#readme",
+  "browserslist": [ "> 1%", "last 2 versions" ]
 }
