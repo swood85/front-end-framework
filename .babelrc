@@ -4,11 +4,10 @@
             "env",
             {
                 "targets": {
-                    "browsers": ["last 2 versions"]
+                    "browsers": ["> 1%", "last 2 versions", "not dead"]
                 },
                 "debug": true
             }
         ]
-    ],
-    "plugins": ["transform-runtime"]
+    ]
 }

@@ -88,7 +88,7 @@ $map2: ( $mobile:$column, $tablet:$column, $desktop:$column );
  
     .row {
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
         align-content: space-between;
     }
 }

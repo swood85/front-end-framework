@@ -1,4 +1,4 @@
-require("babel-runtime/regenerator")
+require("babel-polyfill");
 require("./scss/main.scss");
 require("./index.html");
 

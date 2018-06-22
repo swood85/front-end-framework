@@ -1,16 +1,18 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WebpackMd5Hash = require('webpack-md5-hash');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: {
     main: ["./src/index.js"]
   },
   // mode: "development",
-  mode: devMode ? 'development' : 'production',
+  mode: devMode ? "development" : "production",
   output: {
-    filename: "[name]-bundle.js",
+    filename: "js/[name]-bundle.js",
     path: path.resolve(__dirname, "../dist/"),
     publicPath: "/"
   },
@@ -19,11 +21,13 @@ module.exports = {
     overlay: true
   },
   plugins: [
+    new CleanWebpackPlugin("./dist/", {}),
     new MiniCssExtractPlugin(
       {
         filename: "css/[name].css"
       }
-    )
+    ),
+    new WebpackMd5Hash()
   ],
   module: {
     rules: [
@@ -39,15 +43,10 @@ module.exports = {
       {
         test: /\.s?[ac]ss$/,
         use: [
-          // // devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-          // "style-loader", MiniCssExtractPlugin.loader,
-          // "css-loader",
-          // "postcss-loader",
-          // "sass-loader"
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { url: false, sourceMap: true } },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } }
+          { loader: "css-loader", options: { url: false, sourceMap: true } },
+          { loader: "postcss-loader", options: { sourceMap: true } },
+          { loader: "sass-loader", options: { sourceMap: true } }
         ]
       },
       {
@@ -83,5 +82,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: "source-map"
 };
