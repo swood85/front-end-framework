@@ -7,7 +7,8 @@ module.exports = {
   entry: {
     main: ["./src/index.js"]
   },
-  mode: "development",
+  // mode: "development",
+  mode: devMode ? 'development' : 'production',
   output: {
     filename: "[name]-bundle.js",
     path: path.resolve(__dirname, "../dist/"),
@@ -82,6 +83,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
-  mode: devMode ? 'development' : 'production'
+  devtool: 'source-map'
 };
