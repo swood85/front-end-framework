@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DE Front End Developer Framework</title>
     <link rel="stylesheet" href="./css/main.css">
-    <!-- <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.entry %>"> -->
+    <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
 </head>
 <body>
     <header class="header">
@@ -61,13 +61,15 @@
         
         </div> <!-- /container -->
 
+        <div id="app" />
+
     </main>
 
     <footer class="footer">
         FOOTER CONTENT
     </footer>
     
-    <script src="/js/main-bundle.js"></script>
-    <!-- <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->
+    <script src="./js/main-bundle.js"></script>
+    <!-- <script src="<%=htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->
 </body>
 </html>

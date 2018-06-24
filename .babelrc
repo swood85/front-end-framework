@@ -1,12 +1,11 @@
 {
     "presets": [
+        "@babel/env",
+        "@babel/preset-react",
         [
-            "env",
+            "@babel/preset-stage-2",
             {
-                "targets": {
-                    "browsers": ["> 1%", "last 2 versions", "not dead"]
-                },
-                "debug": true
+                "decoratorsLegacy": true
             }
         ]
     ]
