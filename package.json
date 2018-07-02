@@ -44,7 +44,7 @@
     "webpack-md5-hash": "0.0.6"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config=webpack.dev.js  --hot --open",
+    "dev": "webpack-dev-server --config=webpack.dev.js --open",
     "build": "webpack --config=webpack.dev.js"
   },
   "repository": {

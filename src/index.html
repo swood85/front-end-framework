@@ -1,3 +1,4 @@
+<!doctype>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,66 +9,76 @@
     <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
 </head>
 <body>
-    <header class="header">
-        HEADER
-    </header>
+    <div class="container">
 
-    <main>
-        MAIN CONTENT
-        <div class="profile">
-            <img src="./images/fed.jpg" alt="">
-            <h1 class="heading-primary--main">Hello World</h1>
-        </div>
+        <header class="header">
+            <section class="profile">
+                <!-- <img src="./images/fed.jpg" alt=""> -->
+                <h1 class="heading-primary--main">Header/Banner Section</h1>
+            </section>
+        </header>
 
-        GRID SYSTEM
-        <div id="grid" class="cell-16 cell-850-12 cell-450-6 cell-380-2">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <main class="wrapper">
+            <div class="box--1">Small box 1</div>
+            <div class="box--2">Small box 2</div>
+            <div class="box--3">Small box 3</div>
+            <div class="sidebar">Sidebar</div>
 
-        <div class="container">
-            <h1>Building a flexbox grid with Sass!</h1>
+            <div class="main-content">
+                <div id="app" />
+            </div>
+        </main>
+
+        <footer class="footer">
+            Footer
+        </footer>
+
+    </div>
+
+        <!-- <section class="container">
+            <h2>Float Grid</h2>
+            <div id="grid" class="cell-16 cell-850-12 cell-450-6 cell-380-2" style="overflow:hidden">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section> -->
+
+        <!-- <section class="container">
+            <h2>Flexbox Grid</h2>
 
             <div class="row">
                 <div class="col-1200-3 col-768-6 col-320-12">12</div>
                 <div class="col-1200-3 col-768-6 col-320-12">11</div>
                 <div class="col-1200-3 col-768-6 col-320-12">1</div>
                 <div class="col-1200-3 col-768-6 col-320-12">10</div>
-                <!-- <div class="col-1200-6 col-768-3 col-320-12">2</div>
-                <div class="col-1200-6 col-768-3 col-320-12">9</div> -->
-                <!-- <div class="col-3">3</div>
+                <div class="col-1200-6 col-768-3 col-320-12">2</div>
+                <div class="col-1200-6 col-768-3 col-320-12">9</div>
+                <div class="col-3">3</div>
                 <div class="col-8">8</div>
                 <div class="col-4">4</div>
                 <div class="col-7">7</div>
                 <div class="col-5">5</div>
                 <div class="col-6">6</div>
-                <div class="col-6">6</div> -->
-                <!-- <div class="col-6 col-offset-6">6</div> -->
-            </div> <!-- /row -->
+                <div class="col-6">6</div>
+                <<div class="col-6 col-offset-6">6</div>
+            </div> 
         
-        </div> <!-- /container -->
+        </section> -->
 
-        <div id="app" />
-
-    </main>
-
-    <footer class="footer">
-        FOOTER CONTENT
-    </footer>
     
     <script src="./js/main-bundle.js"></script>
     <!-- <script src="<%=htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->

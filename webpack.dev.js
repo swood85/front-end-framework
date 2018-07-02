@@ -17,8 +17,8 @@ module.exports = {
   },
   devServer: {
     contentBase: 'dist',
-    overlay: true,
-    hot: true
+    overlay: true
+    // hot: true
   },
   plugins: [
     new CleanWebpackPlugin('dist', {}),
@@ -39,12 +39,15 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader']
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        // use: ['babel-loader', 'eslint-loader']
-        use: ['babel-loader']
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   use: ['babel-loader', 'eslint-loader'],
+      //   options: {
+      //     failOnError: true,
+      //   }
+      //   // use: ['babel-loader']
+      // },
       {
         test: /\.s?[ac]ss$/,
         use: [
@@ -90,7 +93,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.jpg$/,
+        test: /\.(jpe?g|png|svg)$/i,
         use: [{
           loader: 'file-loader',
           options: {
