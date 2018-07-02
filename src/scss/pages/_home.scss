@@ -18,14 +18,19 @@
   max-width: 80vw;
   margin: 3rem auto;
   display: grid;
-  // grid-template-rows: 10rem 1fr 10rem;
-  grid-template-columns: 1fr;
+//   grid-template-columns: 1fr;
+    grid-template-areas:    "head"
+                            "main"
+                            "foot";
   grid-gap: 2rem;
 
   .wrapper {
       display: grid;
-      grid-template-rows:  repeat(3, 1fr);
-      grid-template-columns: repeat(3, 3fr) 2fr;
+    //   grid-template-rows:  repeat(3, 1fr);
+    //   grid-template-columns: repeat(3, 3fr) 2fr;
+    grid-template-areas:    "box--1 box--2 box--3 sidebar"
+                            "main main main sidebar"
+                            "main main main sidebar";
       grid-gap: 2rem;
       
       & > * {
